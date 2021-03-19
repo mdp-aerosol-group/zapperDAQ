@@ -22,22 +22,32 @@
       <object class="GtkHeaderBar" id="header">
         <property name="visible">True</property>
         <property name="can_focus">False</property>
-        <property name="subtitle">NC State DAQ System</property>
+        <property name="has_subtitle">False</property>
+        <property name="spacing">5</property>
         <property name="show_close_button">True</property>
         <child>
           <object class="GtkEntry" id="DataFile">
-            <property name="width_request">450</property>
-            <property name="height_request">10</property>
+            <property name="width_request">200</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
             <property name="max_width_chars">37</property>
-            <property name="text" translatable="yes">/home/mdpetter/Documents/Data/</property>
             <property name="primary_icon_stock">gtk-file</property>
             <property name="secondary_icon_stock">gtk-media-record</property>
           </object>
         </child>
         <child>
           <placeholder/>
+        </child>
+        <child>
+          <object class="GtkButton" id="closeButton">
+            <property name="label" translatable="yes">Stop DAQ</property>
+            <property name="visible">True</property>
+            <property name="can_focus">True</property>
+            <property name="receives_default">True</property>
+          </object>
+          <packing>
+            <property name="position">18</property>
+          </packing>
         </child>
       </object>
     </child>

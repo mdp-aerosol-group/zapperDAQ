@@ -19,9 +19,13 @@ const ticks = every(1.0)
 const timestamps = map(_ -> time() - reftime, ticks) 
 const DAQ = map(DAQloop, timestamps)               
 
-Gtk.set_gtk_property!(wnd, :title, "Zapper DAQ")
+Gtk.set_gtk_property!(wnd, :title, "")
 Gtk.set_gtk_property!(gui["DataFile"], :text, outfile)
 
 Gtk.showall(wnd);
 
-:DONE
+Godot = @task _->false
+id = signal_connect(x->schedule(Godot), gui["closeButton"], "clicked")
+Godot = @task _->false
+
+wait(Godot)
