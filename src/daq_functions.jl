@@ -50,8 +50,11 @@ function DAQloop(t::Float64)
     set_gtk_property!(gui["Voltage"], :text, @sprintf("%0.2f", AIN0))
     set_gtk_property!(gui["Current"], :text, @sprintf("%0.2f", AIN1))
 
-    addpoint!(t, AIN0, plot1, gplot1, 1)
-    addpoint!(t, AIN1, plot1, gplot1, 2)
+    AV = (AIN0 < 0.1) ? 0.1 : AIN0
+    AI = (AIN1 < 0.1) ? 0.1 : AIN1
+
+    addpoint!(t, AV, plot1, gplot1, 1)
+    addpoint!(t, AI, plot1, gplot1, 2)
 
     ts = now()
 
