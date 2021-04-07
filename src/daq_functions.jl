@@ -43,8 +43,8 @@ function DAQloop(t::Float64)
     
     setDAC(ADDR, VOUT_CHANNEL, Vdac0)
     setDAC(ADDR, ENABLE_CHANNEL, enable)
-
-    AIN0 = @>> getADC(ADDR, VMON_CHANNEL) (x -> x * 1000.0) 
+    
+    AIN0 = @>> getADC(ADDR, VMON_CHANNEL) (x -> (x * 1000.0 - 466) .* 1.43) 
     AIN1 = @>> getADC(ADDR, IMON_CHANNEL) (x -> -x * 0.167 * 1000.0) 
    
     set_gtk_property!(gui["Voltage"], :text, @sprintf("%0.2f", AIN0))
