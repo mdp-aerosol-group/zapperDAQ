@@ -1,22 +1,8 @@
 # zapperDAQ
 
-Data acquisition system for the NC State Electrostatic Precipitator.
-
-## Installation (Preinstalled Image)
+*Data Acquisition System for the NC State Electrostatic Precipitator.*
 
 The software is intended to run on a [Raspberry PI Model 4b](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/) that is interfaced with  [Pi-Plate DAQC2](https://pi-plates.com/) module.
-
-An OS image with software preinstalled can be flashed onto an SD card.
-
-1. Download [Etcher](https://www.balena.io/etcher/)
-2. Download the OS image [](zenodo.org)
-3. Extract the image and flash the .img file onto the SD card
-4. Insert SD card into the Pi and boot.The username is ``pi`` and
-password is ```A3erosolSc1enceRocks!```
-5. Setup the Pi so you connect to it via ssh from your personal computer. For example through a direct ethernet connection.
-6. Ensure that you have a local X-server installed (e.g. Xming). When connected to the pi via ssh, test it by running ```xeyes```
-7. Start the software using the command ```./daq.sh``` (do not power up the HV power supply yet)
-8. Use a battery and a voltmeter to test that the input and output of the Pi-Plate
 
 
 ## Installation (Build OS and Software From Sources)
@@ -50,17 +36,17 @@ sudo apt-get install xeyes
 
 (1) Download with wget
 ```bash
-wget https://julialang-s3.julialang.org/bin/linux/aarch64/1.6/julia-1.6.0-rc3-linux-aarch64.tar.gz
+wget https://julialang-s3.julialang.org/bin/linux/aarch64/1.6/julia-1.6.0-linux-aarch64.tar.gz
 ```
 
 (2) Extract the files
 ```bash
-tar xvfz julia-1.6.0-rc3-linux-aarch64.tar.gz 
+tar xvfz julia-1.6.0-linux-aarch64.tar.gz 
 ```
 
 (3) Create symbolic link
 ```bash
-sudo ln -s /home/pi/julia-1.6.0-rc3/bin/julia /usr/bin/julia
+sudo ln -s /home/pi/julia-1.6.0/bin/julia /usr/bin/julia
 ```
 
 (4) Test if julia runs
@@ -76,7 +62,7 @@ you sould see
   (_)     | (_) (_)    |
    _ _   _| |_  __ _   |  Type "?" for help, "]?" for Pkg help.
   | | | | | | |/ _` |  |
-  | | |_| | | | (_| |  |  Version 1.6.0-rc3 (2021-03-16)
+  | | |_| | | | (_| |  |  Version 1.6.0 (2021-03-24)
  _/ |\__'_|_|_|\__'_|  |  Official https://julialang.org/ release
 |__/                   |
 
