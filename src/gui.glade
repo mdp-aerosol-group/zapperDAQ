@@ -183,7 +183,7 @@
             <property name="width_request">200</property>
             <property name="visible">True</property>
             <property name="can_focus">True</property>
-            <property name="max_width_chars">15</property>
+            <property name="max_width_chars">25</property>
             <property name="primary_icon_stock">gtk-file</property>
             <property name="secondary_icon_stock">gtk-media-record</property>
           </object>
